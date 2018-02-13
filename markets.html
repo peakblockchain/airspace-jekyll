@@ -38,7 +38,8 @@ permalink: /markets/
 <script>
   $(document).ready(function() { 
     var response = $.get("http://api.peakblockchain.io/v1/market", function(data) {
-      $.each(data, function(i, item) { 
+      $.each(data, function(i, item) {
+        console.log(item);
         $("#table_gdax").append(`<tr><td>${item.token}/${item.base_currency}</td><td>${item.last}</td><td>${item.volume}</td></tr>`);
       });
     });
