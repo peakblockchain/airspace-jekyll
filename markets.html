@@ -26,6 +26,7 @@ permalink: /markets/
           <h2>GDAX</h2>
           <table class="table table-bordered table-striped table-responsive" id="table_gdax">
             <thead><tr><th>Market</th><th>Last</th><th>Volume</th></tr></thead>
+            <tbody></tbody>
          </table>
         </div>
       </div>
@@ -39,7 +40,7 @@ permalink: /markets/
   $(document).ready(function() { 
     $.get("http://api.peakblockchain.io/v1/market", function(data) {
       $.each(data.results, function(i, item) {
-        $("#table_gdax").append(`<tr><td>${item.token}/${item.base_currency}</td><td>${item.last}</td><td>${item.volume}</td></tr>`);
+        $("#table_gdax tbody").append(`<tr><td>${item.token}/${item.base_currency}</td><td>${item.last}</td><td>${item.volume}</td></tr>`);
       });
     });
   });
